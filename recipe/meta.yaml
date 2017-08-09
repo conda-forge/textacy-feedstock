@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
   skip: True  # [win32 or linux32]
 
@@ -40,7 +40,6 @@ requirements:
     - spacy >=1.7.0,<2.0.0
     - tqdm >=4.11.1
     - unidecode >=0.04.19
-    - mwparserfromhell >=0.4.4
 
 test:
   imports:
