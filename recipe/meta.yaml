@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.3.4" %}
-{% set sha256sum = "56117d2e2549d33eafc91735e20c7e9e1a955cbe271788d50610adb2b860e46a" %}
+{% set version = "0.4.1" %}
+{% set sha256sum = "9f617a0b32f28baa45a07aecdb9c4ff58342274788c0f9aa1de8fff78f1a8e13" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
   skip: True  # [win32 or linux32]
 
@@ -24,30 +24,30 @@ requirements:
   run:
     - python
     - backports.csv >=1.0.1  # [py2k]
-    - cachetools >=2.0
+    - cachetools >=2.0.0
     - cld2-cffi >=0.1.4
     - cytoolz >=0.8
-    - ftfy >=4.2,<5.0.0
+    - ftfy >=4.2.0,<5.0.0
     - ijson >=2.3
-    - matplotlib >=1.5
     - networkx >=1.11
-    - numpy >=1.8,<2.0.0
+    - numpy >=1.9.0,<2.0.0
     - pyemd >=0.3.0
     - pyphen >=0.9.4
     - python-levenshtein >=0.12.0
     - requests >=2.10.0
-    - scipy >=0.17
-    - scikit-learn >=0.17
+    - scipy >=0.17.0
+    - scikit-learn >=0.17.0
     - spacy >=1.7.0,<2.0.0
+    - tqdm >=4.11.1
     - unidecode >=0.04.19
 
 test:
   imports:
     - textacy
     - textacy.constants
-    - textacy.corpora
     - textacy.corpus
     - textacy.data
+    - textacy.datasets
     - textacy.doc
     - textacy.export
     - textacy.extract
@@ -85,3 +85,4 @@ about:
 extra:
   recipe-maintainers:
     - rolando
+    - mageky
