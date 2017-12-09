@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.4.1" %}
-{% set sha256sum = "9f617a0b32f28baa45a07aecdb9c4ff58342274788c0f9aa1de8fff78f1a8e13" %}
+{% set version = "0.4.2" %}
+{% set sha256sum = "280735fd629482b7b23176ce9775239391cebc7d209de6726d3393b7ff610669" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,8 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
+  number: 0
+  noarch: python
   script: python setup.py install --single-version-externally-managed --record=record.txt
   skip: True  # [win32 or linux32]
 
@@ -27,10 +28,11 @@ requirements:
     - cachetools >=2.0.0
     - cld2-cffi >=0.1.4
     - cytoolz >=0.8
-    - ftfy >=4.2.0,<5.0.0
+    - ftfy >=4.2,<5.0.0
     - ijson >=2.3
+    - matplotlib >=1.5
     - networkx >=1.11
-    - numpy >=1.9.0,<2.0.0
+    - numpy >=1.9,<2.0.0
     - pyemd >=0.3.0
     - pyphen >=0.9.4
     - python-levenshtein >=0.12.0
@@ -42,6 +44,8 @@ requirements:
     - unidecode >=0.04.19
 
 test:
+  commands:
+    - python -m textacy -h
   imports:
     - textacy
     - textacy.constants
