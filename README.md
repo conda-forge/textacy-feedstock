@@ -21,7 +21,9 @@ Cython.
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/textacy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/textacy-feedstock)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/textacy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/textacy-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/textacy-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/textacy-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/textacy-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/textacy-feedstock/branch/master)
 
 Current release info
 ====================
