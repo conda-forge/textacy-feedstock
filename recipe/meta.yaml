@@ -30,7 +30,7 @@ requirements:
     - joblib>=0.13.0
     - matplotlib >=1.5
     - networkx >=1.11
-    - numpy >=1.9,<2.0.0
+    - {{ pin_compatible('numpy', min_pin='1.9.0', upper_bound='2.0.0') }}
     - pyemd >=0.3.0
     - pyphen >=0.9.4
     - python-levenshtein >=0.12.0
