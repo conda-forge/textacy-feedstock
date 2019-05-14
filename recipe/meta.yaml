@@ -27,8 +27,6 @@ requirements:
     - cachetools >=2.0.0
     - cld2-cffi >=0.1.4
     - cytoolz >=0.8.0
-    - ftfy >=4.2,<5.0.0
-    - ijson >=2.3
     - matplotlib >=1.5
     - networkx >=1.11
     - numpy >=1.9,<2.0.0
