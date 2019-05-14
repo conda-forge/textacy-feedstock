@@ -27,6 +27,7 @@ requirements:
     - cachetools >=2.0.0
     - cld2-cffi >=0.1.4
     - cytoolz >=0.8.0
+    - joblib>=0.13.0
     - matplotlib >=1.5
     - networkx >=1.11
     - numpy >=1.9,<2.0.0
