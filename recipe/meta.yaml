@@ -44,6 +44,7 @@ requirements:
 test:
   commands:
     - python -m textacy -h
+    - python -m pytest --cov {{ name }} --cov-report term-missing -v tests
   imports:
     - textacy
     - textacy.cache
@@ -67,6 +68,9 @@ test:
     - textacy.tm
     - textacy.viz
     - textacy.vsm
+  requires:
+    - pytest >=4.0.0
+    - pytest-cov >=2.6.0
 
 about:
   home: https://github.com/chartbeat-labs/textacy
