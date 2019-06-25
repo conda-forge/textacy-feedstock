@@ -7,7 +7,7 @@ Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: higher-level NLP built on spaCy
+Summary: NLP, before and after spaCy
 
 textacy is a Python library for performing higher-level natural language
 processing (NLP) tasks, built on the high-performance spaCy library. With
