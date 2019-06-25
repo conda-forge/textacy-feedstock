@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.7.0" %}
-{% set sha256sum = "7d8214deed4c8c787e9285b327e6466a2f469b8f0876c7cd59ca19cc2f189ac8" %}
+{% set version = "0.7.1" %}
+{% set sha256sum = "003177bf2ebcec84624db1ade132aaf53f4e07c2dbf25d87e65387999d66d1a0" %}
 
 package:
   name: {{ name }}
@@ -25,7 +25,6 @@ requirements:
     - python
     - backports.csv >=1.0.1  # [py2k]
     - cachetools >=2.0.0
-    - cld2-cffi >=0.1.4
     - cytoolz >=0.8.0
     - joblib>=0.13.0
     - matplotlib >=1.5
@@ -36,7 +35,7 @@ requirements:
     - python-levenshtein >=0.12.0
     - requests >=2.10.0
     - scipy >=0.17.0
-    - scikit-learn >=0.17.0,<0.21.0
+    - scikit-learn >=0.18.0,<0.21.0
     - spacy >=2.0.12
     - srsly >=0.0.5
     - tqdm >=4.11.1
