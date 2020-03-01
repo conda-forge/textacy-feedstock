@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.8.0" %}
-{% set sha256sum = "959db2b6c05ed7b7ebdc0b8e87675d43a85d3514dc0495605ffa6ac413f77bbc" %}
+{% set version = "0.10.0" %}
+{% set sha256sum = "0a824333f53d19d24ca864c92da52f3fecd412f4ef3e1448864c45f06189fd6d" %}
 
 package:
   name: {{ name }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: True  # [win32 or linux32]
+  skip: true  # [win32 or linux32]
 
 requirements:
   build:
