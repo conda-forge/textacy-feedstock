@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.8.0" %}
-{% set sha256sum = "959db2b6c05ed7b7ebdc0b8e87675d43a85d3514dc0495605ffa6ac413f77bbc" %}
+{% set version = "0.9.1" %}
+{% set sha256sum = "e10b55f532726a9fdbbf7885538a7c63aba80f29f67c453e60bbc0699e0012ca" %}
 
 package:
   name: {{ name }}
@@ -23,43 +23,41 @@ requirements:
 
   run:
     - python
-    - backports.csv >=1.0.1  # [py2k]
-    - cachetools >=2.0.0
+    - cachetools >=2.0.1
     - cytoolz >=0.8.0
-    - jellyfish >=0.6.0,<0.7.0
+    - jellyfish >=0.7.0
     - joblib >=0.13.0
     - matplotlib-base >=1.5
-    - networkx >=1.11
-    - {{ pin_compatible('numpy', min_pin='1.9.0', upper_bound='2.0.0') }}
-    - pyemd >=0.3.0
+    - networkx >=2.0
+    - {{ pin_compatible('numpy', min_pin='1.17.0') }}
+    - pyemd >=0.5.0
     - pyphen >=0.9.4
     - requests >=2.10.0
     - scipy >=0.17.0
-    - scikit-learn >=0.18.0,<0.21.0
+    - scikit-learn >=0.19.0
     - spacy >=2.0.12
     - srsly >=0.0.5
-    - tqdm >=4.11.1
+    - tqdm >=4.19.6
 
 test:
   commands:
     - python -m textacy -h
-    # - python -m pytest --pyargs {{ name }}
   imports:
     - textacy
+    - textacy.about
+    - textacy.augmentation
     - textacy.cache
-    - textacy.compat
     - textacy.constants
     - textacy.corpus
     - textacy.datasets
-    - textacy.doc
     - textacy.export
     - textacy.extract
     - textacy.io
     - textacy.ke
     - textacy.lang_utils
-    - textacy.lexicon_methods
     - textacy.network
     - textacy.preprocessing
+    - textacy.resources
     - textacy.similarity
     - textacy.spacier
     - textacy.text_stats
