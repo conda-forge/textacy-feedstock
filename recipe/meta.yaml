@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.9.1" %}
-{% set sha256sum = "e10b55f532726a9fdbbf7885538a7c63aba80f29f67c453e60bbc0699e0012ca" %}
+{% set version = "0.10.0" %}
+{% set sha256sum = "0a824333f53d19d24ca864c92da52f3fecd412f4ef3e1448864c45f06189fd6d" %}
 
 package:
   name: {{ name }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: True  # [win32 or linux32]
+  skip: true  # [win32 or linux32 or py<36]
 
 requirements:
   build:
@@ -35,7 +35,7 @@ requirements:
     - requests >=2.10.0
     - scipy >=0.17.0
     - scikit-learn >=0.19.0
-    - spacy >=2.0.12
+    - spacy >=2.2.0
     - srsly >=0.0.5
     - tqdm >=4.19.6
 
