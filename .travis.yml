@@ -3,23 +3,33 @@
 
 language: generic
 
-env:
-  global:
-    # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
-    - secure: "EB5yTwxvc9fOIkkioO+M2PXCKByGK5B6uWJyPCh51VN6MwA2l/apT2nAahYEsgh+Rw9pLBP6CWhtwiHzXB2z5B6mJhtKRbTibi7hTLrMGjgNCL7A/HSLSYZeYUuNvk55ppO3n6Bp1Iix9vStvuZOCSdhvvTQF9LuIDyT/2RmQF4KAliptEdRhOcCzyFg9oDVDYz8UrJZzyWKJ6WEWIkApiKmI2u5m44J/nzzjlfyCN7kVxrC566TknRSvuIoMLMplCnRMenLAl0IVJzYOAxB1wz/q/R5O5qJEpZqkmCaD/TxQZOp8Bly3MD8duhrRFX66EnVypaD5ufFpE1QNlTf+M7PUUziLfmLIlPqGLmonEaF3m3XBA9udiLn76ROn3uLmzq/Pk5suALc0DBM0TKL1Z15HCWNmm54YISSx51bKSh/NOml/IM6qW497H2k59maK5JdASog5sswIY3fltEVyUpqAgvZWwK9QyzRAwvXUPf2aRMOvBgCAEbLd5HU23At60UHmfSGzRPzbqr+OXA4Z9MPuQ8mWgrxhg/3tY105t1ZtF0bHu+VyHTLs2VOM5TVBuO7+3FTqfGGzLWPSwMePQS1wkxN8TW87Z9ExDZL/ZK4YMzkbK52Y16zHYCHxv/v2gJX2C6GD4Uo29VzGYQMfT05kDUnGFU4MYQ4xOSo83w="
+
 
 matrix:
   include:
-    - env: CONFIG=osx_python3.6.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
+    - env: CONFIG=osx_64_python3.6.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
       os: osx
-      osx_image: xcode9.4
+      osx_image: xcode12u
+      arch: amd64
 
-    - env: CONFIG=osx_python3.7.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
+    - env: CONFIG=osx_64_python3.7.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
       os: osx
-      osx_image: xcode9.4
+      osx_image: xcode12u
+      arch: amd64
+
+    - env: CONFIG=osx_64_python3.8.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
+      os: osx
+      osx_image: xcode12u
+      arch: amd64
+
+    - env: CONFIG=osx_64_python3.9.____cpython UPLOAD_PACKAGES=True PLATFORM=osx-64
+      os: osx
+      osx_image: xcode12u
+      arch: amd64
 
 script:
   - export CI=travis
   - export GIT_BRANCH="$TRAVIS_BRANCH"
+  - export FEEDSTOCK_NAME=$(basename ${TRAVIS_REPO_SLUG})
 
   - if [[ ${PLATFORM} =~ .*osx.* ]]; then ./.scripts/run_osx_build.sh; fi
