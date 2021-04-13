@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.10.0" %}
-{% set sha256sum = "0a824333f53d19d24ca864c92da52f3fecd412f4ef3e1448864c45f06189fd6d" %}
+{% set version = "0.11.0" %}
+{% set sha256sum = "77fb724c27b0a04440d79881bf81f62ce445ce0728d797e79cdd6c9de786b85e" %}
 
 package:
   name: {{ name }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: true  # [win32 or linux32 or py<36]
+  skip: true  # [win32 or linux32 or py<37]
 
 requirements:
   host:
@@ -23,50 +23,47 @@ requirements:
 
   run:
     - python
-    - cachetools >=2.0.1
-    - cytoolz >=0.8.0
-    - jellyfish >=0.7.0
+    - cachetools >=4.0.0
+    - cytoolz >=0.10.1
+    - jellyfish >=0.8.0
     - joblib >=0.13.0
-    - matplotlib-base >=1.5
+    - matplotlib-base >=3.0.0
     - networkx >=2.0
     - {{ pin_compatible('numpy', min_pin='1.17.0') }}
-    - pyemd >=0.5.0
-    - pyphen >=0.9.4
+    - pyphen >=0.10.0
     - requests >=2.10.0
     - scipy >=0.17.0
     - scikit-learn >=0.19.0
-    - spacy >=2.2.0
-    - srsly >=0.0.5
+    - spacy >=3.0.0
     - tqdm >=4.19.6
 
 test:
-  commands:
-    - python -m textacy -h
   imports:
     - textacy
-    - textacy.about
     - textacy.augmentation
     - textacy.cache
     - textacy.constants
     - textacy.corpus
     - textacy.datasets
-    - textacy.export
+    - textacy.errors
+    - textacy.extensions
     - textacy.extract
     - textacy.io
-    - textacy.ke
-    - textacy.lang_utils
-    - textacy.network
+    - textacy.lang_id
     - textacy.preprocessing
+    - textacy.representations
     - textacy.resources
     - textacy.similarity
     - textacy.spacier
     - textacy.text_stats
-    - textacy.text_utils
     - textacy.tm
+    - textacy.types
+    - textacy.utils
     - textacy.viz
-    - textacy.vsm
   requires:
     - pytest >=4.0.0
+  source_files:
+    - tests
 
 about:
   home: https://github.com/chartbeat-labs/textacy
