@@ -38,33 +38,35 @@ requirements:
     - tqdm >=4.19.6
 
 test:
-  commands:
-    - python -m textacy -h
   imports:
     - textacy
-    - textacy.about
     - textacy.augmentation
     - textacy.cache
     - textacy.constants
     - textacy.corpus
     - textacy.datasets
-    - textacy.export
+    - textacy.errors
+    - textacy.extensions
     - textacy.extract
     - textacy.io
-    - textacy.ke
-    - textacy.lang_utils
-    - textacy.network
+    - textacy.lang_id
     - textacy.preprocessing
+    - textacy.representations
     - textacy.resources
     - textacy.similarity
     - textacy.spacier
     - textacy.text_stats
-    - textacy.text_utils
     - textacy.tm
+    - textacy.types
+    - textacy.utils
     - textacy.viz
-    - textacy.vsm
   requires:
     - pytest >=4.0.0
+  source_files:
+    - tests
+  commands:
+    - python -m textacy -h
+    - pytest tests
 
 about:
   home: https://github.com/chartbeat-labs/textacy
