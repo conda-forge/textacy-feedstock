@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: true  # [win32 or linux32 or py<36]
+  skip: true  # [win32 or linux32 or py<37]
 
 requirements:
   host:
@@ -65,7 +65,9 @@ test:
   source_files:
     - tests
   commands:
-    - python -m textacy -h
+    - python -m spacy download en_core_web_sm
+    - python -m textacy download capitol_words
+    - python -m textacy download lang_identifier --version 2.0
     - pytest tests
 
 about:
