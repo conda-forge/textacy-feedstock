@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.11.0" %}
-{% set sha256sum = "77fb724c27b0a04440d79881bf81f62ce445ce0728d797e79cdd6c9de786b85e" %}
+{% set version = "0.12.0" %}
+{% set sha256sum = "2c92bdd6b47305447b64e4cb6cc43c11675f021f910a8074bc8149dbf5325e5b" %}
 
 package:
   name: {{ name }}
