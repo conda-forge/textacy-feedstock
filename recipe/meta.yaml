@@ -51,7 +51,7 @@ test:
     - textacy.corpus
     - textacy.datasets
     - textacy.errors
-    - textacy.extensions
+    - textacy.spacier.extensions
     - textacy.extract
     - textacy.io
     - textacy.lang_id
