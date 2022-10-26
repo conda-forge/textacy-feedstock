@@ -3,7 +3,7 @@ About textacy
 
 Home: https://github.com/chartbeat-labs/textacy
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/textacy-feedstock/blob/main/LICENSE.txt)
 
