@@ -19,8 +19,8 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - python
-    - cross-python_osx-arm64
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
 
   host:
     - python
