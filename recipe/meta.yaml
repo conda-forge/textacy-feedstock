@@ -17,12 +17,13 @@ build:
   skip: true  # [win32 or linux32 or py<37]
 
 requirements:
+  build:
+    - {{ compiler('rust') }}
+
   host:
     - python
     - setuptools
   
-  build:
-    - {{ compiler('rust') }}
 
   run:
     - python
