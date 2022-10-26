@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win32 or linux32 or py<37]
 
 requirements:
