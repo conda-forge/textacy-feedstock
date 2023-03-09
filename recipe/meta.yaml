@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.11.0" %}
-{% set sha256sum = "77fb724c27b0a04440d79881bf81f62ce445ce0728d797e79cdd6c9de786b85e" %}
+{% set version = "0.12.0" %}
+{% set sha256sum = "2c92bdd6b47305447b64e4cb6cc43c11675f021f910a8074bc8149dbf5325e5b" %}
 
 package:
   name: {{ name }}
@@ -12,14 +12,20 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win32 or linux32 or py<37]
 
 requirements:
+  build:
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+
   host:
     - python
     - setuptools
+    - pip
+  
 
   run:
     - python
@@ -46,7 +52,7 @@ test:
     - textacy.corpus
     - textacy.datasets
     - textacy.errors
-    - textacy.extensions
+    - textacy.spacier.extensions
     - textacy.extract
     - textacy.io
     - textacy.lang_id
@@ -67,7 +73,7 @@ test:
 
 about:
   home: https://github.com/chartbeat-labs/textacy
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE.txt
   summary: NLP, before and after spaCy
   description: |
