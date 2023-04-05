@@ -1,6 +1,6 @@
 {% set name = "textacy" %}
-{% set version = "0.12.0" %}
-{% set sha256sum = "2c92bdd6b47305447b64e4cb6cc43c11675f021f910a8074bc8149dbf5325e5b" %}
+{% set version = "0.13.0" %}
+{% set sha256sum = "6be02448c08fc7d7c4edf85289006e39a4a53ef747201ff24b675c652f40c686" %}
 
 package:
   name: {{ name }}
@@ -25,7 +25,7 @@ requirements:
     - python
     - setuptools
     - pip
-  
+
 
   run:
     - python
